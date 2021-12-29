@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+</head>
+<body>
+    <input type="text" placeholder="Nhập tên" id="name">
+    <input type="text" placeholder="Nhập địa chỉ" id="address">
+    <input type="date" placeholder="Nhập ngày" id="date">
+    <button onclick="Write_letter()">Tạo</button>
+    <div id="result">Thư gửi em</div>
+</body>
+</html>
+
+<script>
+    function Write_letter (){
+        let name = document.getElementById("name").value;
+        let address = document.getElementById("address").value;
+        let date = document.getElementById("date").value;
+        let result = name + " thương nhớ, anh đang ở " + address + ". Hẹn em vào tối " + date;
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
