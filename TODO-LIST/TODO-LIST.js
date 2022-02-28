@@ -13,49 +13,28 @@ function listLength() {
 
 function createListElement() {
     let li = document.createElement("li"); // Tạo element "li"
-    li.appendChild(document.createTextNode(input.value)); //makes text from input field the li text
-    ul.appendChild(li); //adds li to ul
-    input.value = ""; //Reset text input field
-
-
-    //START STRIKETHROUGH
-    // because it's in the function, it only adds it for new items
-    function crossOut() {
-        li.classList.toggle("done");
-    }
-
-    li.addEventListener("click", crossOut);
-    //END STRIKETHROUGH
-
+    textNode1 = document.createTextNode(input.value) //Tạo thẻ <p>
+    li.appendChild(textNode1); //Thêm thẻ <p> vào node
+    ul.appendChild(li); //Thêm li vào ul
+    input.value = ""; //Reset lại khu vực input text
 
     // Tạo button X để xóa task
     let deleteBtn = document.createElement("button");
-    deleteBtn.appendChild(document.createTextNode("X"));
+    textNode2 = document.createTextNode("X");
+    deleteBtn.appendChild(textNode2);
     li.appendChild(deleteBtn);
-    deleteBtn.addEventListener("click", deleteListItem);
 
-
-    //ADD CLASS DELETE (DISPLAY: NONE)
     function deleteListItem() {
-        li.classList.add("delete")
+        li.classList.add("delete") //Tạo Class Delete
     }
-    //END ADD CLASS DELETE
-}
 
+    deleteBtn.addEventListener("click", deleteListItem);
+}
 
 function addListAfterClick() {
-    if (inputLength() > 0) { //makes sure that an empty input field doesn't create a li
+    if (inputLength() > 0) { //Không input sẽ không tạo li
         createListElement();
     }
 }
-
-function addListAfterKeypress(event) {
-    if (inputLength() > 0 && event.keyCode === 13) { //13 là keycode của phím enter
-        createListElement();
-    }
-}
-
 
 enterButton.addEventListener("click", addListAfterClick);
-
-input.addEventListener("keypress", addListAfterKeypress);
