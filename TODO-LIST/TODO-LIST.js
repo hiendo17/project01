@@ -1,12 +1,7 @@
-// function Addtask() {
-//     let task = document.getElementById("task").value;
-//     document.getElementById("result").innerHTML = task
-// }
-
-var enterButton = document.getElementById("enter");
-var input = document.getElementById("userInput");
-var ul = document.querySelector("ul");
-var item = document.getElementsByTagName("li");
+let enterButton = document.getElementById("enter");
+let input = document.getElementById("userInput");
+let ul = document.querySelector("ul"); //Trả về phần tử đầu tiên
+let item = document.getElementsByTagName("li");
 
 function inputLength() {
     return input.value.length;
@@ -17,7 +12,7 @@ function listLength() {
 }
 
 function createListElement() {
-    var li = document.createElement("li"); // creates an element "li"
+    let li = document.createElement("li"); // Tạo element "li"
     li.appendChild(document.createTextNode(input.value)); //makes text from input field the li text
     ul.appendChild(li); //adds li to ul
     input.value = ""; //Reset text input field
@@ -33,12 +28,11 @@ function createListElement() {
     //END STRIKETHROUGH
 
 
-    // START ADD DELETE BUTTON
-    var dBtn = document.createElement("button");
-    dBtn.appendChild(document.createTextNode("X"));
-    li.appendChild(dBtn);
-    dBtn.addEventListener("click", deleteListItem);
-    // END ADD DELETE BUTTON
+    // Tạo button X để xóa task
+    let deleteBtn = document.createElement("button");
+    deleteBtn.appendChild(document.createTextNode("X"));
+    li.appendChild(deleteBtn);
+    deleteBtn.addEventListener("click", deleteListItem);
 
 
     //ADD CLASS DELETE (DISPLAY: NONE)
@@ -56,8 +50,7 @@ function addListAfterClick() {
 }
 
 function addListAfterKeypress(event) {
-    if (inputLength() > 0 && event.keyCode === 13) { //this now looks to see if you hit "enter"/"return"
-        //the 13 is the enter key's keycode, this could also be display by event.keyCode === 13
+    if (inputLength() > 0 && event.keyCode === 13) { //13 là keycode của phím enter
         createListElement();
     }
 }
