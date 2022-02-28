@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="stylesheet" type="text/css" href="TODO-LIST.css">
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="intro">
+                <h1>My To-do List</h1>
+
+                <div>
+                    <div>
+                        <p id="manual">1. Nhập để tạo task.</p>
+                        <p id="manual">2. Click vào task để đánh dấu đã làm.</p>
+                        <p id="manual">3. Click "X" để xóa task khỏi list.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="col-12">
+                        <input id="userInput" type="text" placeholder="Tạo task">
+                        <button id="enter">Add task</button>
+                    </div>
+                </div>
+
+                <!-- Empty List -->
+                <div>
+                    <div class="listItems col-12">
+                        <ul class="col-12 offset-0 col-sm-8 offset-sm-2">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="TODO-LIST.js"></script>
+</body>
+
+</html>
