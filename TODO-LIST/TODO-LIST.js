@@ -29,6 +29,12 @@ function createListElement() {
     }
 
     deleteBtn.addEventListener("click", deleteListItem);
+
+    //Click để chuyển màu Done
+    function crossOut() {
+        li.classList.toggle("done");
+    }
+    li.addEventListener("click", crossOut);
 }
 
 function addListAfterClick() {

@@ -55,6 +55,11 @@ input {
     padding: 5px;
 }
 
+.done {
+    background: #51DF70;
+    color: #00891E;
+}
+
 .delete {
     display: none;
 }
